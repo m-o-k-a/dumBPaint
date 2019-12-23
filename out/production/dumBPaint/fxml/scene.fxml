@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.SeparatorMenuItem?>
-<GridPane fx:controller="controller.Controller"
-          xmlns:fx="http://javafx.com/fxml" alignment="top_center" hgap="10" vgap="10">
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.layout.AnchorPane?>
+<AnchorPane fx:controller="controller.Controller"
+            xmlns:fx="http://javafx.com/fxml" prefWidth="1280" prefHeight="720">
+    <Canvas fx:id="canvas" width="1280" height="720" onMouseDragged="#draw" visible="true"/>
     <MenuBar fx:id="menuBar" prefWidth="235" onMouseEntered="#menuOpacityFalse" onMouseExited="#menuOpacitytrue"
-             style="-fx-opacity: 0.4; -fx-border-color: transparent;">
+             style="-fx-opacity: 0.4; -fx-border-color: transparent;" layoutX="500">
         <menus>
             <Menu text="(Draw)">
                 <items>
-                    <MenuItem text="New"/>
+                    <MenuItem text="New" onAction="#clear"/>
                     <SeparatorMenuItem  />
                     <MenuItem text="Save"/>
                 </items>
@@ -21,6 +23,7 @@
                 <items>
                     <MenuItem text="Pencil"/>
                     <MenuItem text="Bucket"/>
+                    <MenuItem text="Erase"/>
                     <SeparatorMenuItem  />
                     <MenuItem text="Square"/>
                     <MenuItem text="Circle" visible="false"/>
@@ -37,6 +40,7 @@
             <Menu text="Color" >
                 <items>
                     <MenuItem text="Black"/>
+                    <SeparatorMenuItem  />
                     <MenuItem text="Red"/>
                     <MenuItem text="Green"/>
                     <MenuItem text="Blue"/>
@@ -51,4 +55,4 @@
             </items>
         </Menu>
     </MenuBar>
-</GridPane>
+</AnchorPane>
