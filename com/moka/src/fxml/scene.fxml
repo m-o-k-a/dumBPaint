@@ -71,7 +71,7 @@
                     <MenuItem text="Green" onAction="#setGreen"/>
                     <MenuItem text="Blue" onAction="#setBlue"/>
                     <SeparatorMenuItem  />
-                    <MenuItem text="Fuschia" onAction="#setFuschia"/>
+                    <MenuItem text="Fuschia" onAction="#setFuchsia"/>
                     <MenuItem text="Yellow" onAction="#setYellow"/>
                     <MenuItem text="Cyan" onAction="#setCyan"/>
                 </items>

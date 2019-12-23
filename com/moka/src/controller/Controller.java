@@ -112,7 +112,7 @@ public class Controller {
     public void setRed(ActionEvent actionEvent) { color = Color.RED; }
     public void setGreen(ActionEvent actionEvent) { color = Color.GREEN; }
     public void setBlue(ActionEvent actionEvent) { color = Color.BLUE; }
-    public void setFuschia(ActionEvent actionEvent) { color = Color.FUCHSIA; }
+    public void setFuchsia(ActionEvent actionEvent) { color = Color.FUCHSIA; }
     public void setYellow(ActionEvent actionEvent) { color = Color.YELLOW; }
     public void setCyan(ActionEvent actionEvent) { color = Color.CYAN; }
 
