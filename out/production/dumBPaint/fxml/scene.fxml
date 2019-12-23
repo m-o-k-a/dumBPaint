@@ -28,6 +28,28 @@
                     <MenuItem text="Square" onAction="#setSquare"/>
                     <MenuItem text="Circle" onAction="#setCircle"/>
                     <MenuItem text="Triangle" onAction="#setTriangle"/>
+                    <SeparatorMenuItem  />
+                    <Menu text="Special">
+                        <items>
+                            <Menu text="Shapes">
+                                <items>
+                                    <MenuItem text="Cross Yes" onAction="#setcrossYes"/>
+                                    <MenuItem text="Cross No" style="-fx-opacity: 0.1;"/>
+                                    <SeparatorMenuItem  />
+                                    <MenuItem text="Weird A" onAction="#setWeirdA"/>
+                                </items>
+                            </Menu>
+                            <Menu text="Flags">
+                                <items>
+                                    <MenuItem text="FLAG FR" style="-fx-opacity: 0.1;"/>
+                                    <MenuItem text="FLAG ZH" style="-fx-opacity: 0.1;"/>
+                                    <MenuItem text="FLAG VN" style="-fx-opacity: 0.1;"/>
+                                    <MenuItem text="FLAG JP" style="-fx-opacity: 0.1;"/>
+                                    <MenuItem text="FLAG KR" style="-fx-opacity: 0.1;"/>
+                                </items>
+                            </Menu>
+                        </items>
+                    </Menu>
                 </items>
             </Menu>
             <Menu text="Size">
@@ -43,11 +65,15 @@
             </Menu>
             <Menu text="Color" >
                 <items>
-                    <MenuItem text="Black"/>
+                    <MenuItem text="Black" onAction="#setBlack"/>
                     <SeparatorMenuItem  />
-                    <MenuItem text="Red"/>
-                    <MenuItem text="Green"/>
-                    <MenuItem text="Blue"/>
+                    <MenuItem text="Red" onAction="#setRed"/>
+                    <MenuItem text="Green" onAction="#setGreen"/>
+                    <MenuItem text="Blue" onAction="#setBlue"/>
+                    <SeparatorMenuItem  />
+                    <MenuItem text="Fuschia" onAction="#setFuschia"/>
+                    <MenuItem text="Yellow" onAction="#setYellow"/>
+                    <MenuItem text="Cyan" onAction="#setCyan"/>
                 </items>
             </Menu>
         </menus>
