@@ -32,9 +32,9 @@
             </Menu>
             <Menu text="Size">
                 <items>
-                    <MenuItem text="Small"/>
-                    <MenuItem text="Medium"/>
-                    <MenuItem text="Huge"/>
+                    <MenuItem text="Small" onAction="#setSmall"/>
+                    <MenuItem text="Medium" onAction="#setMedium"/>
+                    <MenuItem text="Large" onAction="#setLarge"/>
                 </items>
             </Menu>
             <Menu text="Color" >

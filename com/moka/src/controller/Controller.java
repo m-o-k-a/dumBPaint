@@ -36,6 +36,10 @@ public class Controller {
         gc.fillRect(canvas.getLayoutX(), canvas.getLayoutY(), canvas.getWidth(), canvas.getHeight());
     }
 
+    public void setSmall(ActionEvent actionEvent) { size = 1; }
+    public void setMedium(ActionEvent actionEvent) { size = 5; }
+    public void setLarge(ActionEvent actionEvent) { size = 10; }
+
     private enum BrushEnum {
         PENCIL,
         BUCKET,
