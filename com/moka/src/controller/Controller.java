@@ -75,6 +75,11 @@ public class Controller {
     public void setCircle(ActionEvent actionEvent) { brush = BrushEnum.CIRCLE; }
     public void setTriangle(ActionEvent actionEvent) { brush = BrushEnum.TRIANGLE;}
 
+    public void setBlack(ActionEvent actionEvent) { color = Color.BLACK; }
+    public void setRed(ActionEvent actionEvent) { color = Color.RED; }
+    public void setGreen(ActionEvent actionEvent) { color = Color.GREEN; }
+    public void setBlue(ActionEvent actionEvent) { color = Color.BLUE; }
+
     private enum BrushEnum {
         PENCIL,
         BUCKET,

@@ -43,11 +43,11 @@
             </Menu>
             <Menu text="Color" >
                 <items>
-                    <MenuItem text="Black"/>
+                    <MenuItem text="Black" onAction="#setBlack"/>
                     <SeparatorMenuItem  />
-                    <MenuItem text="Red"/>
-                    <MenuItem text="Green"/>
-                    <MenuItem text="Blue"/>
+                    <MenuItem text="Red" onAction="#setRed"/>
+                    <MenuItem text="Green" onAction="#setGreen"/>
+                    <MenuItem text="Blue" onAction="#setBlue"/>
                 </items>
             </Menu>
         </menus>
