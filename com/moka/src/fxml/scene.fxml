@@ -23,7 +23,7 @@
                 <items>
                     <MenuItem text="Pencil" onAction="#setPencil"/>
                     <MenuItem text="Bucket" onAction="#setBucket"/>
-                    <MenuItem text="Erase" onAction="#setErase"/>
+                    <MenuItem text="Eraser" onAction="#setErase"/>
                     <SeparatorMenuItem  />
                     <MenuItem text="Square" onAction="#setSquare"/>
                     <MenuItem text="Circle" onAction="#setCircle"/>
