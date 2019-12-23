@@ -13,6 +13,7 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("../fxml/scene.fxml"));
         primaryStage.setTitle("dumBPaint - stupid painting software");
         primaryStage.setScene(new Scene(root, 1280, 720));
+        primaryStage.setResizable(false);
         primaryStage.show();
     }
 
