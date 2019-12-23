@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="updated">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/dumBPaint/controller/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dumBPaint/controller/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/dumBPaint/fxml/scene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dumBPaint/fxml/scene.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/dumBPaint/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/dumBPaint/main/Main.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -309,7 +312,14 @@
       <option name="project" value="LOCAL" />
       <updated>1577118097475</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="fixed a typo">
+      <created>1577118241880</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1577118241880</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
