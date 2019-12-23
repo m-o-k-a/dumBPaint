@@ -22,6 +22,9 @@ public class Controller {
     private Color color = Color.BLACK;
     private int size = 1;
 
+    double[] dotX;
+    double[] dotY;
+
     public void menuOpacityFalse(MouseEvent mouseEvent) { menuBar.setStyle("-fx-opacity: 0.8; -fx-border-color: transparent;"); }
     public void menuOpacitytrue(MouseEvent mouseEvent) { menuBar.setStyle("-fx-opacity: 0.4; -fx-border-color: transparent;"); }
 
@@ -39,17 +42,27 @@ public class Controller {
             case BUCKET:
                 gc.fillRect(canvas.getLayoutX(), canvas.getLayoutY(), canvas.getWidth(), canvas.getHeight()); break;
             case ERASE:
+            case CIRCLE:
                 gc.fillOval(mouseEvent.getX(), mouseEvent.getY(),size, size); break;
             case SQUARE:
                 gc.fillRect(mouseEvent.getX(), mouseEvent.getY(),size, size); break;
-            case CIRCLE:
-                gc.fillOval(mouseEvent.getX(), mouseEvent.getY(),size, size); break;
             case TRIANGLE:
-                double[] dotX = new double[4];
+                dotX = new double[4];
                 dotX[0] = mouseEvent.getX(); dotX[1] = mouseEvent.getX()+size; dotX[2] = mouseEvent.getX()-size; dotX[3] = mouseEvent.getX();
-                double[] dotY = new double[4];
+                dotY = new double[4];
                 dotY[0] = mouseEvent.getY(); dotY[1] = mouseEvent.getY()+size; dotY[2] = mouseEvent.getY()+size; dotY[3] = mouseEvent.getY();
                 gc.fillPolygon(dotX, dotY, 4);
+                break;
+            case CROSSYES:
+                dotX = new double[5];
+                dotX[0] = mouseEvent.getX(); dotX[1] = mouseEvent.getX()+size; dotX[2] = mouseEvent.getX(); dotX[3] = mouseEvent.getX()-size;
+                dotX[4] = mouseEvent.getX();
+                dotY = new double[5];
+                dotY[0] = mouseEvent.getY(); dotY[1] = mouseEvent.getY()-size; dotY[2] = mouseEvent.getY()+size; dotY[3] = mouseEvent.getY()-size;
+                dotY[4] = mouseEvent.getY();
+                gc.fillPolygon(dotX, dotY, 5);
+                break;
+            case CROSSNO:
                 break;
         }
 
@@ -74,11 +87,16 @@ public class Controller {
     public void setSquare(ActionEvent actionEvent) { brush = BrushEnum.SQUARE;}
     public void setCircle(ActionEvent actionEvent) { brush = BrushEnum.CIRCLE; }
     public void setTriangle(ActionEvent actionEvent) { brush = BrushEnum.TRIANGLE;}
+    public void setcrossYes(ActionEvent actionEvent) { brush = BrushEnum.CROSSYES; }
+    public void setcrossNo(ActionEvent actionEvent) { brush = BrushEnum.CROSSNO; }
 
     public void setBlack(ActionEvent actionEvent) { color = Color.BLACK; }
     public void setRed(ActionEvent actionEvent) { color = Color.RED; }
     public void setGreen(ActionEvent actionEvent) { color = Color.GREEN; }
     public void setBlue(ActionEvent actionEvent) { color = Color.BLUE; }
+
+
+
 
     private enum BrushEnum {
         PENCIL,
@@ -86,6 +104,8 @@ public class Controller {
         ERASE,
         SQUARE,
         CIRCLE,
-        TRIANGLE
+        TRIANGLE,
+        CROSSYES,
+        CROSSNO
     }
 }
