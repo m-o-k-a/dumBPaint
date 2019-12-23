@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <AnchorPane fx:controller="controller.Controller"
             xmlns:fx="http://javafx.com/fxml" prefWidth="1280" prefHeight="720">
-    <Canvas fx:id="canvas" width="1280" height="720" onMouseDragged="#draw" visible="true"/>
+    <Canvas fx:id="canvas" width="1280" height="720" onMouseDragged="#draw" onMousePressed="#draw" visible="true"/>
     <MenuBar fx:id="menuBar" prefWidth="235" onMouseEntered="#menuOpacityFalse" onMouseExited="#menuOpacitytrue"
              style="-fx-opacity: 0.4; -fx-border-color: transparent;" layoutX="500">
         <menus>
@@ -21,20 +21,24 @@
             </Menu>
             <Menu text="Brush">
                 <items>
-                    <MenuItem text="Pencil"/>
-                    <MenuItem text="Bucket"/>
-                    <MenuItem text="Erase"/>
+                    <MenuItem text="Pencil" onAction="#setPencil"/>
+                    <MenuItem text="Bucket" onAction="#setBucket"/>
+                    <MenuItem text="Erase" onAction="#setErase"/>
                     <SeparatorMenuItem  />
-                    <MenuItem text="Square"/>
-                    <MenuItem text="Circle" visible="false"/>
-                    <MenuItem text="Triangle" visible="false"/>
+                    <MenuItem text="Square" onAction="#setSquare"/>
+                    <MenuItem text="Circle" onAction="#setCircle"/>
+                    <MenuItem text="Triangle" onAction="#setTriangle"/>
                 </items>
             </Menu>
             <Menu text="Size">
                 <items>
-                    <MenuItem text="Small"/>
-                    <MenuItem text="Medium"/>
-                    <MenuItem text="Huge"/>
+                    <MenuItem text="Small" onAction="#setSmall"/>
+                    <MenuItem text="Medium" onAction="#setMedium"/>
+                    <MenuItem text="Large" onAction="#setLarge"/>
+                    <SeparatorMenuItem  />
+                    <MenuItem text="XL" onAction="#setXL"/>
+                    <MenuItem text="XXL" onAction="#setXXL"/>
+                    <MenuItem text="XXXL" onAction="#setXXXL"/>
                 </items>
             </Menu>
             <Menu text="Color" >
