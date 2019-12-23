@@ -36,7 +36,7 @@
                                     <MenuItem text="Cross Yes" onAction="#setcrossYes"/>
                                     <MenuItem text="Cross No" style="-fx-opacity: 0.1;"/>
                                     <SeparatorMenuItem  />
-                                    <MenuItem text="Funny A" onAction="#setcrossYes"/>
+                                    <MenuItem text="Weird A" onAction="#setWeirdA"/>
                                 </items>
                             </Menu>
                             <Menu text="Flags">
@@ -70,6 +70,10 @@
                     <MenuItem text="Red" onAction="#setRed"/>
                     <MenuItem text="Green" onAction="#setGreen"/>
                     <MenuItem text="Blue" onAction="#setBlue"/>
+                    <SeparatorMenuItem  />
+                    <MenuItem text="Fuschia" onAction="#setFuschia"/>
+                    <MenuItem text="Yellow" onAction="#setYellow"/>
+                    <MenuItem text="Cyan" onAction="#setCyan"/>
                 </items>
             </Menu>
         </menus>

@@ -10,6 +10,8 @@ import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Polygon;
 
+import java.util.Random;
+
 public class Controller {
     @FXML
     private MenuBar menuBar;
@@ -38,31 +40,46 @@ public class Controller {
     private void drawShape(MouseEvent mouseEvent) {
         switch (brush) {
             case PENCIL:
-                gc.fillRect(mouseEvent.getX(), mouseEvent.getY(),size, size); break;
+                gc.fillRect(mouseEvent.getX(), mouseEvent.getY(), size, size);
+                break;
             case BUCKET:
-                gc.fillRect(canvas.getLayoutX(), canvas.getLayoutY(), canvas.getWidth(), canvas.getHeight()); break;
+                gc.fillRect(canvas.getLayoutX(), canvas.getLayoutY(), canvas.getWidth(), canvas.getHeight());
+                break;
             case ERASE:
             case CIRCLE:
-                gc.fillOval(mouseEvent.getX(), mouseEvent.getY(),size, size); break;
+                gc.fillOval(mouseEvent.getX(), mouseEvent.getY(), size, size);
+                break;
             case SQUARE:
-                gc.fillRect(mouseEvent.getX(), mouseEvent.getY(),size, size); break;
+                gc.fillRect(mouseEvent.getX(), mouseEvent.getY(), size, size);
+                break;
             case TRIANGLE:
                 dotX = new double[4];
-                dotX[0] = mouseEvent.getX(); dotX[1] = mouseEvent.getX()+size; dotX[2] = mouseEvent.getX()-size; dotX[3] = mouseEvent.getX();
+                dotX[0] = mouseEvent.getX(); dotX[1] = mouseEvent.getX() + size; dotX[2] = mouseEvent.getX() - size;
+                dotX[3] = mouseEvent.getX();
                 dotY = new double[4];
-                dotY[0] = mouseEvent.getY(); dotY[1] = mouseEvent.getY()+size; dotY[2] = mouseEvent.getY()+size; dotY[3] = mouseEvent.getY();
+                dotY[0] = mouseEvent.getY(); dotY[1] = mouseEvent.getY() + size; dotY[2] = mouseEvent.getY() + size;
+                dotY[3] = mouseEvent.getY();
                 gc.fillPolygon(dotX, dotY, 4);
                 break;
             case CROSSYES:
                 dotX = new double[5];
-                dotX[0] = mouseEvent.getX(); dotX[1] = mouseEvent.getX()+size; dotX[2] = mouseEvent.getX(); dotX[3] = mouseEvent.getX()-size;
-                dotX[4] = mouseEvent.getX();
+                dotX[0] = mouseEvent.getX(); dotX[1] = mouseEvent.getX() + size; dotX[2] = mouseEvent.getX();
+                dotX[3] = mouseEvent.getX() - size; dotX[4] = mouseEvent.getX();
                 dotY = new double[5];
-                dotY[0] = mouseEvent.getY(); dotY[1] = mouseEvent.getY()-size; dotY[2] = mouseEvent.getY()+size; dotY[3] = mouseEvent.getY()-size;
-                dotY[4] = mouseEvent.getY();
+                dotY[0] = mouseEvent.getY(); dotY[1] = mouseEvent.getY() - size; dotY[2] = mouseEvent.getY() + size;
+                dotY[3] = mouseEvent.getY() - size; dotY[4] = mouseEvent.getY();
                 gc.fillPolygon(dotX, dotY, 5);
                 break;
             case CROSSNO:
+                break;
+            case WEIRDA:
+                dotX = new double[6];
+                dotX[0] = mouseEvent.getX() - size*2; dotX[1] = mouseEvent.getX() + size; dotX[2] = mouseEvent.getX();
+                dotX[3] = mouseEvent.getX() - size; dotX[4] = mouseEvent.getX()+size*2; dotX[5] = mouseEvent.getX() - size;
+                dotY = new double[6];
+                dotY[0] = mouseEvent.getY(); dotY[1] = mouseEvent.getY() - size; dotY[2] = mouseEvent.getY() + size*2;
+                dotY[3] = mouseEvent.getY() - size; dotY[4] = mouseEvent.getY() + size*3; dotY[5] = mouseEvent.getY()+size;
+                gc.fillPolygon(dotX, dotY, 5);
                 break;
         }
 
@@ -89,14 +106,15 @@ public class Controller {
     public void setTriangle(ActionEvent actionEvent) { brush = BrushEnum.TRIANGLE;}
     public void setcrossYes(ActionEvent actionEvent) { brush = BrushEnum.CROSSYES; }
     public void setcrossNo(ActionEvent actionEvent) { brush = BrushEnum.CROSSNO; }
+    public void setWeirdA(ActionEvent actionEvent) { brush = BrushEnum.WEIRDA; }
 
     public void setBlack(ActionEvent actionEvent) { color = Color.BLACK; }
     public void setRed(ActionEvent actionEvent) { color = Color.RED; }
     public void setGreen(ActionEvent actionEvent) { color = Color.GREEN; }
     public void setBlue(ActionEvent actionEvent) { color = Color.BLUE; }
-
-
-
+    public void setFuschia(ActionEvent actionEvent) { color = Color.FUCHSIA; }
+    public void setYellow(ActionEvent actionEvent) { color = Color.YELLOW; }
+    public void setCyan(ActionEvent actionEvent) { color = Color.CYAN; }
 
     private enum BrushEnum {
         PENCIL,
@@ -106,6 +124,7 @@ public class Controller {
         CIRCLE,
         TRIANGLE,
         CROSSYES,
-        CROSSNO
+        CROSSNO,
+        WEIRDA
     }
 }
