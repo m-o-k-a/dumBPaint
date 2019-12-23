@@ -1,10 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.layout.GridPane?>
-
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
 <GridPane fx:controller="controller.Controller"
-          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+          xmlns:fx="http://javafx.com/fxml" alignment="top_center" hgap="10" vgap="10">
+    <MenuBar fx:id="menuBar" prefWidth="235" onMouseEntered="#menuOpacityFalse" onMouseExited="#menuOpacitytrue"
+             style="-fx-opacity: 0.4; -fx-border-color: transparent;">
+        <menus>
+            <Menu text="(Draw)">
+                <items>
+                    <MenuItem text="New"/>
+                    <SeparatorMenuItem  />
+                    <MenuItem text="Save"/>
+                </items>
+            </Menu>
+            <Menu text="Brush">
+                <items>
+                    <MenuItem text="Pencil"/>
+                    <MenuItem text="Bucket"/>
+                    <SeparatorMenuItem  />
+                    <MenuItem text="Square"/>
+                    <MenuItem text="Circle" visible="false"/>
+                    <MenuItem text="Triangle" visible="false"/>
+                </items>
+            </Menu>
+            <Menu text="Size">
+                <items>
+                    <MenuItem text="Small"/>
+                    <MenuItem text="Medium"/>
+                    <MenuItem text="Huge"/>
+                </items>
+            </Menu>
+            <Menu text="Color" >
+                <items>
+                    <MenuItem text="Black"/>
+                    <MenuItem text="Red"/>
+                    <MenuItem text="Green"/>
+                    <MenuItem text="Blue"/>
+                </items>
+            </Menu>
+        </menus>
+        <Menu text="(?)">
+            <items>
+                <MenuItem text="Help"/>
+                <SeparatorMenuItem  />
+                <MenuItem text="About"/>
+            </items>
+        </Menu>
+    </MenuBar>
 </GridPane>
