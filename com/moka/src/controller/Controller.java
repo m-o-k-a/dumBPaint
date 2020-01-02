@@ -18,7 +18,6 @@ import java.io.File;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Random;
 
 import static javax.swing.JOptionPane.showMessageDialog;
 
@@ -33,8 +32,6 @@ public class Controller {
     private BrushEnum brush = BrushEnum.PENCIL;
     private Color color = Color.BLACK;
     private int size = 1;
-    private final int CANVAS_WIDTH = 1280;
-    private final int CANVAS_HEIGHT = 720;
     private final DateTimeFormatter DTF = DateTimeFormatter.ofPattern("yyyy-MM-dd_HHmmss");
 
     double[] dotX;
