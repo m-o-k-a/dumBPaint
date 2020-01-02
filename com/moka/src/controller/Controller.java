@@ -40,9 +40,26 @@ public class Controller {
     double[] dotX;
     double[] dotY;
 
+    /**
+     * menuOpacityFalse(MouseEvent mouseEvent)
+     * ajust the opacity of the menu depending of the mouse position.
+     * @param mouseEvent
+     */
     public void menuOpacityFalse(MouseEvent mouseEvent) { menuBar.setStyle("-fx-opacity: 0.8; -fx-border-color: transparent;"); }
+
+    /**
+     * menuOpacityTrue(MouseEvent mouseEvent)
+     * ajust the opacity of the menu depending of the mouse position.
+     * @param mouseEvent
+     */
     public void menuOpacitytrue(MouseEvent mouseEvent) { menuBar.setStyle("-fx-opacity: 0.4; -fx-border-color: transparent;"); }
 
+    /**
+     * draw(MouseEvent mouseEvent)
+     * if not ERASE, get the last selected color and draw the last selected shape calling the function drawShape(MouseEvent mouseEvent).
+     * is ERASE, load a white color and use the brush ERASE then call the function drawShape(MouseEvent mouseEvent).
+     * @param mouseEvent
+     */
     public void draw(MouseEvent mouseEvent) {
         gc = canvas.getGraphicsContext2D();
         if (brush == BrushEnum.ERASE) { gc.setFill(Color.WHITE); }
@@ -50,6 +67,11 @@ public class Controller {
         drawShape(mouseEvent);
     }
 
+    /**
+     * drawShape(MouseEvent mouseEvent)
+     * will draw the shape corresponding of the value of the enum brush with the corresponding color.
+     * @param mouseEvent
+     */
     private void drawShape(MouseEvent mouseEvent) {
         switch (brush) {
             case PENCIL:
@@ -98,12 +120,23 @@ public class Controller {
 
     }
 
+    /**
+     * clear(ActionEvent actionEvent)
+     * clear the canvas by filling it in white.
+     * @param actionEvent
+     */
     public void clear(ActionEvent actionEvent) {
         gc = canvas.getGraphicsContext2D();
         gc.setFill(Color.WHITE);
         gc.fillRect(canvas.getLayoutX(), canvas.getLayoutY(), canvas.getWidth(), canvas.getHeight());
     }
 
+    /**
+     * save(ActionEvent actionEvent)
+     * save the canvas in a png file.
+     * @param actionEvent
+     * @exception IOException
+     */
     public void save(ActionEvent actionEvent) {
         menuBar.setVisible(false);
         WritableImage writableImage = canvas.snapshot(new SnapshotParameters(), null);
@@ -117,6 +150,7 @@ public class Controller {
         menuBar.setVisible(true);
     }
 
+    //The following methods are used to change the size of the brush
     public void setSmall(ActionEvent actionEvent) { size = 1; }
     public void setMedium(ActionEvent actionEvent) { size = 5; }
     public void setLarge(ActionEvent actionEvent) { size = 10; }
@@ -124,6 +158,7 @@ public class Controller {
     public void setXXL(ActionEvent actionEvent) { size = 40; }
     public void setXXXL(ActionEvent actionEvent) { size = 60; }
 
+    //The following methods are used to change the type of the brush
     public void setPencil(ActionEvent actionEvent) { brush = BrushEnum.PENCIL; }
     public void setBucket(ActionEvent actionEvent) { brush = BrushEnum.BUCKET; }
     public void setErase(ActionEvent actionEvent) { brush = BrushEnum.ERASE; }
@@ -134,6 +169,7 @@ public class Controller {
     public void setcrossNo(ActionEvent actionEvent) { brush = BrushEnum.CROSSNO; }
     public void setWeirdA(ActionEvent actionEvent) { brush = BrushEnum.WEIRDA; }
 
+    //The following methods are used to change the color of the brush
     public void setBlack(ActionEvent actionEvent) { color = Color.BLACK; }
     public void setRed(ActionEvent actionEvent) { color = Color.RED; }
     public void setGreen(ActionEvent actionEvent) { color = Color.GREEN; }
