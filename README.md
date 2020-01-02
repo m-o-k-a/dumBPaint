@@ -1,4 +1,4 @@
-# dumBPaint (V 0.1)
+# dumBPaint (V 0.2)
 ## About
 dumBPaint is a simple yet usefull drawing software who keep it simple !
 Only w/ basics shapes, sizes and colors it is time to show your idea to the world !
@@ -7,19 +7,22 @@ Only w/ basics shapes, sizes and colors it is time to show your idea to the worl
 ![Screenshot](promoALL.jpg)
 
 
-## What's in this version (V 0.1)?
+## What's in this version (V 0.2)?
+* (Save) : you can save your drawing as a png format
+* Docstrings are finished
+
+from the previous versions :
 * (Draw) : New
 * Brush : Pencil, Bucket, Eraser, Square, Circle, Triangle, Special Shapes
 * Size : Small, Medium, Large, XL, XXL, XXXL
 * color : Black, Red, Green, Blue, Fuchsia, Yellow, Cyan
 
 ## Future Plan
-* Save Function
 * Load Function
 * ? Menu (the menu with Help and About)
-* DocString in code
 * More Shapes
 * More Colors
+* Specific directory to save files
 
 ## Credits
-2019 - EDDY IKHLEF
+2019/2020 - EDDY IKHLEF
