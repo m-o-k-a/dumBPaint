@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="dumBPaint:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/dumBPaint_jar</output-path>
+    <root id="archive" name="dumBPaint.jar">
+      <element id="module-output" name="dumBPaint" />
+    </root>
+  </artifact>
+</component>
