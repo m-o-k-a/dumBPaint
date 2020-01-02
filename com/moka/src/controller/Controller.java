@@ -1,16 +1,26 @@
 package controller;
 
+import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.SnapshotParameters;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.MenuBar;
+import javafx.scene.image.WritableImage;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Polygon;
 
+import javax.imageio.ImageIO;
+import java.io.File;
+import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Random;
+
+import static javax.swing.JOptionPane.showMessageDialog;
 
 public class Controller {
     @FXML
@@ -23,6 +33,9 @@ public class Controller {
     private BrushEnum brush = BrushEnum.PENCIL;
     private Color color = Color.BLACK;
     private int size = 1;
+    private final int CANVAS_WIDTH = 1280;
+    private final int CANVAS_HEIGHT = 720;
+    private final DateTimeFormatter DTF = DateTimeFormatter.ofPattern("yyyy-MM-dd_HHmmss");
 
     double[] dotX;
     double[] dotY;
@@ -89,6 +102,19 @@ public class Controller {
         gc = canvas.getGraphicsContext2D();
         gc.setFill(Color.WHITE);
         gc.fillRect(canvas.getLayoutX(), canvas.getLayoutY(), canvas.getWidth(), canvas.getHeight());
+    }
+
+    public void save(ActionEvent actionEvent) {
+        menuBar.setVisible(false);
+        WritableImage writableImage = canvas.snapshot(new SnapshotParameters(), null);
+        File file = new File("dumBPaint_"+DTF.format(LocalDateTime.now())+".png");
+        try {
+            ImageIO.write(SwingFXUtils.fromFXImage(writableImage, null), "png", file);
+            showMessageDialog(null, "Snapshot "+"dumBPaint_"+DTF.format(LocalDateTime.now())+".png successfully");
+        } catch (IOException e) {
+            showMessageDialog(null, "Error in the writing process");
+        }
+        menuBar.setVisible(true);
     }
 
     public void setSmall(ActionEvent actionEvent) { size = 1; }

@@ -16,7 +16,7 @@
                 <items>
                     <MenuItem text="New" onAction="#clear"/>
                     <SeparatorMenuItem  />
-                    <MenuItem text="Save"/>
+                    <MenuItem text="Save" onAction="#save"/>
                 </items>
             </Menu>
             <Menu text="Brush">
